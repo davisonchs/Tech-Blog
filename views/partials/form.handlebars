@@ -1,0 +1,30 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-lg">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-4" id="exampleModalLabel">Create a New Post</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-4">
+                        <label for="postTitle" class="col-form-label">Post Title:</label>
+                        <input type="text" class="form-control shadow-sm rounded" id="postTitle">
+                    </div>
+                    <div class="mb-4">
+                        <label for="postContent" class="col-form-label">Post Content:</label>
+                        <textarea class="form-control shadow-sm rounded" id="postContent" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="publishBtn">Publish</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container d-flex justify-content-center mt-3">
+    <button type="button" class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@mdo">New Post</button>
+</div>

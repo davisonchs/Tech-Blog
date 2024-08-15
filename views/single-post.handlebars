@@ -1,0 +1,43 @@
+<div class="card shadow-lg rounded-lg border-0 text-center">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Post Details</h5>
+    </div>
+    <div class="card-body bg-light">
+        <h4 class="card-title font-weight-bold text-dark mb-3" id="title">{{blogPost.title}}</h4>
+        <p class="card-text text-muted mb-4" id="content">{{blogPost.content}}</p>
+        <div class="container d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo">Edit</button>
+        </div>
+    </div>
+    <div class="card-footer bg-transparent border-top-0 text-muted">
+        Created: {{blogPost.createdAt}}
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Update Post</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-light">
+                <form>
+                    <div class="mb-4">
+                        <label for="postTitle" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control shadow-sm rounded" id="postTitle" value="{{blogPost.title}}">
+                    </div>
+                    <div class="mb-4">
+                        <label for="postContent" class="col-form-label">Content:</label>
+                        <textarea class="form-control shadow-sm rounded" id="postContent" rows="4">{{blogPost.content}}</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer bg-transparent border-top-0">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="updatePostBtn">Publish</button>
+            </div>
+        </div>
+    </div>
+</div>

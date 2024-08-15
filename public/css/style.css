@@ -1,0 +1,23 @@
+body {
+    background-color: rgba(245, 245, 245, 0.9); 
+}
+
+.navbar,
+.hbar {
+    background-color: #1a73e8 !important; 
+    color: #ffffff !important; 
+    border-bottom: 3px solid #4285f4; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.navbar a {
+    color: #ffffff !important; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.navbar a:hover {
+    color: #ffca28 !important; 
+    transform: scale(1.05); 
+}

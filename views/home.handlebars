@@ -1,0 +1,12 @@
+{{> nav}}
+{{#if loggedIn}}
+  {{> blog-post}}
+{{else}}
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+      <h1 class="display-4 text-secondary mb-4">Please Log In</h1>
+      <p class="lead text-muted">You need to be logged in to view blog posts.</p>
+      <a href="/login" class="btn btn-primary btn-lg">Log In</a>
+    </div>
+  </div>
+{{/if}}

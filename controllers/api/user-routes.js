@@ -17,7 +17,9 @@ router.post('/signup', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
             res.status(200).json(userData);
+            console.log('Session saved after signup:', req.session);
         });
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -27,6 +29,7 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
+    console.log(req.body); // Log request body
     try {
         const userData = await User.findOne({
             where: {
@@ -34,32 +37,25 @@ router.post('/login', async (req, res) => {
             },
         });
         if (!userData) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+            res.status(400).json({ message: 'Incorrect email or password, please try again' });
             return;
         }
         const validPassword = await userData.checkPassword(req.body.password);
-
         if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+            res.status(400).json({ message: 'Incorrect email or password, please try again' });
             return;
         }
-
         req.session.save(() => {
-            req.session.loggedIn = true;
             req.session.userId = userData.id;
-            res
-                .status(200)
-                .json({ user: userData, message: 'You are now logged in!' });
+            req.session.loggedIn = true;
+            res.status(200).json({ user: userData, message: 'You are now logged in!' });
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
+
 
 
 
